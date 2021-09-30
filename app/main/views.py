@@ -1,6 +1,5 @@
 from . import main
 from .. import db
-from flask_login import current_user
 from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, request, jsonify, abort,make_response
