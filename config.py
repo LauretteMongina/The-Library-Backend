@@ -1,32 +1,16 @@
 import os
-
 class Config:
-    '''
-    General configuration parent class
-    '''
-
-    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SECRET_KEY="thisissecretkey"
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:1234@localhost/library'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-
 class ProdConfig(Config):
-    '''
-    Production  configuration child class
-    Args:
-        Config: The parent configuration class with General configuration settings
-    '''
-    pass
-
+    DEBUG=False
 
 class DevConfig(Config):
-    '''
-    Development  configuration child class
-    Args:
-        Config: The parent configuration class with General configuration settings
-    '''
-
     DEBUG = True
+    SECRET_KEY="thisissecretkey"
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:1234@localhost/library'
 
 
 config_options = {
